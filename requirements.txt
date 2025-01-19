@@ -1,0 +1,35 @@
+# Core Libraries
+python-dotenv==1.0.0  # Environment variable management
+MetaTrader5==5.0.37   # MetaTrader 5 API for trading
+pandas==1.5.3         # Data manipulation and analysis
+numpy==1.24.2         # Numerical operations
+scipy==1.10.1         # Scientific computing
+matplotlib==3.7.1     # Data visualization
+scikit-learn==1.2.2   # Machine learning utilities
+statsmodels==0.13.5   # Statistical models and tests
+
+# Logging and Utilities
+pytz==2023.3          # Time zone handling
+smtplib               # Email handling (builtin, no need for pip install)
+
+# Asynchronous Programming
+concurrent.futures    # Builtin library for threading and multiprocessing
+
+# Typing and Helpers
+typing-extensions==4.5.0  # Enhanced typing for backward compatibility
+
+tensorflow
+torch
+scikit-learn
+xgboost
+lightgbm
+catboost
+statsmodels
+prophet
+nltk
+textblob
+deap
+scikit-optimize
+transformers
+newsapi-python
+blpapi

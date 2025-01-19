@@ -1,0 +1,92 @@
+# Configuration Package Documentation
+
+The `config` package provides essential configuration management for the CFD Trading System. It includes tools for securely storing sensitive data, validating critical settings, managing the MetaTrader 5 API connection, and defining strategy-specific configurations such as time frames.
+
+---
+
+## Table of Contents
+
+1. [Environment Variables (`.env`)](#environment-variables)
+2. [Settings (`settings.py`)](#settings)
+3. [MetaTrader 5 API Configuration (`api_config.py`)](#metatrader-5-api-configuration)
+4. [Time Frames for Strategies (`settings.py`)](#time-frames-for-strategies)
+
+---
+
+## Environment Variables
+
+### File: `.env`
+
+The `.env` file securely stores environment variables, including sensitive data such as account credentials, API keys, and time frame settings for strategies. These variables are loaded dynamically using the `dotenv` library.
+
+### Key Contents:
+- **Account Details**: Account ID, password, and broker name.
+- **Leverage and Trading Limits**: Configuration for leverage, maximum drawdown, and per-trade risk.
+- **API Credentials**: Username, password, and server details for the MetaTrader 5 API.
+- **Trading Pairs**: A comma-separated list of tradable currency pairs.
+- **Global Thresholds**: Parameters for stop-loss, take-profit, and spread limits.
+- **Logging and Notifications**: Settings for log files and optional Slack notifications.
+- **Time Frames for Strategies**: Defines which time frames are used by each strategy.
+
+---
+
+## Settings
+
+### File: `settings.py`
+
+The `settings.py` file manages configuration data for the trading system. It dynamically loads variables from `.env`, validates critical settings, and ensures robust system behavior.
+
+### Key Features:
+- **Dynamic Loading**: Automatically fetches values from `.env` or uses defaults if not specified.
+- **Validation**: Ensures settings like `ACCOUNT_ID`, `LEVERAGE`, and `TRADING_HOURS` are within acceptable ranges.
+- **Critical Settings**:
+  - **Account Details**: Includes account ID, password, and broker name.
+  - **Trading Limits**: Covers leverage, maximum drawdown, and risk per trade.
+  - **API Credentials**: Configures MetaTrader 5 login parameters.
+  - **Trading Pairs**: Validates the list of tradable pairs.
+  - **Thresholds**: Ensures limits for stop-loss, take-profit, and spreads are defined.
+
+---
+
+## MetaTrader 5 API Configuration
+
+### File: `api_config.py`
+
+The `api_config.py` file handles initialization, authentication, and management of the MetaTrader 5 API connection. It ensures robust interaction with the API and manages connection health.
+
+### Key Features:
+- **Initialization**:
+  - Configures and starts the MetaTrader 5 API.
+  - Authenticates using account credentials and server details.
+
+- **Connection Management**:
+  - Monitors the connection state.
+  - Provides automatic reconnection logic with configurable retry attempts.
+
+- **Utility Functions**:
+  - Fetches account information and logs critical details.
+  - Performs safe API operations with error handling.
+
+- **Logging**:
+  - Comprehensive logs for all API interactions, including errors and reconnection attempts.
+
+---
+
+## Time Frames for Strategies
+
+### File: `settings.py`
+
+The `settings.py` file also defines the time frames associated with each strategy. Different strategies may require different time frame options to optimize performance and fit market conditions.
+
+### Key Strategy Time Frames:
+- **Trend Following**: Time frames such as `1h`, `4h`, `1D` are suitable for identifying medium to long-term trends.
+- **Mean Reversion**: For scalping strategies, `5m`, `15m` are used for quick trades, while `30m`, `1h`, `4h` can be used for swing mean reversion strategies.
+- **Breakout Strategy**: Strategies that aim to capitalize on volatility and price breakouts typically work best with time frames like `1m`, `5m`, `15m`, or `1h`.
+- **Scalping**: Fast trades require lower time frames like `1m`, `5m`, and sometimes `15m`.
+- **Momentum**: Momentum strategies can be applied to `5m`, `15m`, `30m`, `1h`, and `4h`.
+
+---
+
+## Summary
+
+The `config` package provides a centralized and secure approach to managing configurations, ensuring the CFD Trading System operates with maximum reliability and flexibility. Each component is designed to simplify the management of sensitive data and maintain robust interactions with the MetaTrader 5 API. Additionally, time frame configurations have been incorporated to ensure optimal strategy execution based on market conditions.
