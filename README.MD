@@ -1,7 +1,5 @@
 # SYNTHRON CFD TRADER PRO BY MAGNA OPUS TECHNOLOGIES
 
----
-
 ## 🚀 **About the Application**
 
 The SYNTHRON CFD Trader is a world-class platform designed for advanced **Contract for Difference (CFD)** trading. Combining state-of-the-art **Machine Learning Models (MLMs)** with robust trading strategies, this platform delivers unmatched precision and scalability for both individual traders and institutions.
@@ -32,11 +30,22 @@ The SYNTHRON CFD Trader is a world-class platform designed for advanced **Contra
    - Generates visual and tabular reports for analysis.
 
 4. **Machine Learning Integration**
-   - **Forecasting Models**: ARIMA, GRU, LSTM, Transformer.
-   - **Reinforcement Learning**: Actor-Critic, DQN, PPO.
-   - **Anomaly Detection**: Autoencoder, Isolation Forest, One-Class SVM.
-   - **Clustering**: DBSCAN, GMM, K-Means for market segmentation.
-   - **Sentiment Analysis**: BERT and Vader for real-time market sentiment.
+   - **Forecasting Models**: ARIMA, GRU, LSTM, Transformer, and Prophet for advanced time-series analysis.
+     - Modules: `arima_model.py`, `gru_model.py`, `lstm_model.py`, `transformer_model.py`
+   - **Reinforcement Learning**: Actor-Critic, DQN, PPO, and SAC for adaptive strategy optimization.
+     - Modules: `actor_critic.py`, `dqn.py`, `ppo.py`
+   - **Anomaly Detection**: Autoencoder, Isolation Forest, One-Class SVM, and Mahalanobis Distance for risk detection.
+     - Modules: `autoencoder.py`, `isolation_forest.py`, `one_class_svm.py`
+   - **Clustering**: DBSCAN, GMM, K-Means, and Agglomerative Clustering for precise market segmentation.
+     - Modules: `dbscan.py`, `gmm.py`, `kmeans.py`
+   - **Feature Selection**: Mutual Information, PCA, and Recursive Feature Elimination (RFE) for data optimization.
+     - Modules: `mutual_info.py`, `pca.py`, `rfe.py`
+   - **Optimization**: Bayesian Optimization, Genetic Algorithm, and PSO for parameter tuning.
+     - Modules: `bayesian_optimization.py`, `genetic_algorithm.py`, `pso.py`
+   - **Regression**: DNN, Random Forest, and Support Vector Regression (SVR) for pricing and trend predictions.
+     - Modules: `dnn_regressor.py`, `random_forest_regressor.py`, `svr_model.py`
+   - **Sentiment Analysis**: BERT, Vader, and GPT-based models for real-time market sentiment and news analysis.
+     - Modules: `bert_sentiment.py`, `vader_analyzer.py`
 
 ---
 
@@ -85,6 +94,15 @@ SYNTHRON_CFD_Trader/
 ├── data/             # Data fetching, processing, and indicators
 ├── strategies/       # Trading strategies, risk management, and position management
 ├── performance/      # Backtesting, metrics calculation, and reporting
+├── models/           # Machine learning models for predictions, analysis, and optimization
+│   ├── anomaly_detection/   # Models for detecting anomalies
+│   ├── classification/      # Classification models for predictions
+│   ├── clustering/          # Clustering models for market segmentation
+│   ├── forecasting/         # Time series forecasting models
+│   ├── optimization/        # Optimization algorithms like GA, PSO
+│   ├── regression/          # Regression models for pricing and trends
+│   ├── reinforcement_learning/ # RL models for dynamic strategies
+│   └── sentiment_analysis/  # Sentiment analysis models like BERT, Vader
 ├── utils/            # Helper functions, logging, and exception handling
 ├── main.py           # Entry point for the application
 └── README.md         # Documentation
@@ -141,3 +159,4 @@ This project is licensed under the **MIT License**. Refer to the `LICENSE` file 
 ## ⚠ **Disclaimer**
 
 The SYNTHRON CFD Trader does not provide financial advice. Use at your own risk. Loss of capital is possible. Ensure compliance with local laws and regulations before using this software.
+
